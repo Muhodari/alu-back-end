@@ -35,10 +35,12 @@ def get_employee_todo_progress(employee_id):
         employee_name = employee.get("name")
 
         emp_todos = get_employee_todos(employee_id)
-        tasks = {todo.get("title"): todo.get("completed") for todo in emp_todos}
+        tasks = {todo.get("title"): todo.get("completed")
+                 for todo in emp_todos}
 
         total_tasks = len(tasks)
-        completed_tasks = [title for title, completed in tasks.items() if completed]
+        completed_tasks = [
+            title for title, completed in tasks.items() if completed]
         completed_tasks_count = len(completed_tasks)
 
         print(f"Employee {employee_name} is done with tasks"
