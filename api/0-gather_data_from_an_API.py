@@ -13,7 +13,7 @@ def get_employee_todo_progress(user_id):
         employee_name = user_data['name']
 
         # Fetch tasks for the user
-        task_response = requests.get(f'https://jsonplaceholder.typicode.com/todos?userId={user_id}')
+        task_response = requests.get(f'https://jsonplaceholder.typicode.com/users/{user_id}/todos')
         task_response.raise_for_status()
         todos_data = task_response.json()
 
