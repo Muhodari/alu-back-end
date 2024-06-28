@@ -1,8 +1,10 @@
 #!/usr/bin/python3
+""" Gather data from an API """
 import requests
 import sys
 
 def get_employee_todo_progress(user_id):
+    """ employees to todo progress """
     try:
         # Fetch employee information
         user_response = requests.get(f'https://jsonplaceholder.typicode.com/users/{user_id}')
